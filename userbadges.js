@@ -3,7 +3,7 @@
 if(window.__AVIA_PROFILE_BADGES__)return;
 window.__AVIA_PROFILE_BADGES__=true;
 
-const BADGE_URL="https://raw.githubusercontent.com/AvaLilac/AviaClientBadges/refs/heads/main/userbadges.js";
+const BADGE_URL="https://raw.githubusercontent.com/AvaLilac/AviaClientBadges/refs/heads/main/userbadgesbackend.js";
 
 let badgeData=null,loadingPromise=null;
 
