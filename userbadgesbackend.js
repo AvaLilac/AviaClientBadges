@@ -19,6 +19,15 @@ window.AVIA_USER_BADGES = [
     },
 
       {
+        name: "KamiNeko!",
+        icon: "🦄",
+        color: "#916acf",
+        users: [
+            "Kaze#6558"
+        ]
+    },
+    
+      {
         name: "NameHere",
         icon: "💎",
         color: "#ff66cc",
