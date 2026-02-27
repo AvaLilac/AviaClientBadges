@@ -18,7 +18,7 @@ window.AVIA_USER_BADGES = [
         ]
     },
 
-      {
+    {
         name: "KamiNeko!",
         icon: "🦄",
         color: "#916acf",
@@ -27,7 +27,7 @@ window.AVIA_USER_BADGES = [
         ]
     },
     
-      {
+    {
         name: "The GXT",
         icon: "💎",
         color: "#A40202",
@@ -35,6 +35,5 @@ window.AVIA_USER_BADGES = [
             "MrGXT_yt#0106"
         ]
     }
-]
 
-];;
+];
