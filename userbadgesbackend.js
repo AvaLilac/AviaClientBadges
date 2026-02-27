@@ -28,12 +28,12 @@ window.AVIA_USER_BADGES = [
     },
     
       {
-        name: "NameHere",
+        name: "The GXT",
         icon: "💎",
-        color: "#ff66cc",
+        color: "#A40202",
         users: [
-            // "User#0002"
+            "MrGXT_yt#0106"
         ]
-    }
+    }]
 
 ];;
