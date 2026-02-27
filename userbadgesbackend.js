@@ -1,5 +1,4 @@
 window.AVIA_USER_BADGES = [
-
     {
         name: "Avia Client Owner",
         icon: "👑",
@@ -8,16 +7,14 @@ window.AVIA_USER_BADGES = [
             "AvaLilac#7432"
         ]
     },
-
     {
-        name: " Cat Girl",
+        name: "Cat Girl",
         icon: "😸",
         color: "#ff66cc",
         users: [
             "Amelia#2716"
         ]
     },
-
     {
         name: "KamiNeko!",
         icon: "🦄",
@@ -26,7 +23,6 @@ window.AVIA_USER_BADGES = [
             "Kaze#6558"
         ]
     },
-    
     {
         name: "The GXT",
         icon: "💎",
@@ -35,5 +31,4 @@ window.AVIA_USER_BADGES = [
             "MrGXT_yt#0106"
         ]
     }
-
 ];
