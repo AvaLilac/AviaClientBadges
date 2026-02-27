@@ -10,8 +10,8 @@ window.AVIA_USER_BADGES = [
     },
 
     {
-        name: "Idea Suggester",
-        icon: "💎",
+        name: " Cat Girl",
+        icon: "😸",
         color: "#ff66cc",
         users: [
             "Amelia#2716"
