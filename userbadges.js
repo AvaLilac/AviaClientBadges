@@ -1,7 +1,7 @@
 window.AVIA_USER_BADGES = [
 
     {
-        name: "Avia Client ownerOwner",
+        name: "Avia Client Owner",
         icon: "👑",
         color: "var(--md-sys-color-primary)",
         users: [
