@@ -34,6 +34,7 @@ window.AVIA_USER_BADGES = [
         users: [
             "MrGXT_yt#0106"
         ]
-    }]
+    }
+]
 
 ];;
