@@ -43,6 +43,15 @@ window.AVIA_USER_BADGES = [
         users: [
             "Nath#9230"
         ]
+    },
+    
+      {
+        name: "bunny",
+        icon: "🐇",
+        color: "#FCE4EC",
+        users: [
+            "amybunnygirl#0122"
+        ]
     }
 
 ];;
