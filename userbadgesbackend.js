@@ -34,6 +34,15 @@ window.AVIA_USER_BADGES = [
         users: [
             "MrGXT_yt#0106"
         ]
+    },
+
+    {
+        name: "Goat",
+        icon: "🐐",
+        color: "#66399E",
+        users: [
+            "Nath#9230"
+        ]
     }
 
 ];;
