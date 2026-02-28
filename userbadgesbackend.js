@@ -36,7 +36,7 @@ window.AVIA_USER_BADGES = [
         ]
     },
 
-    {
+      {
         name: "Goat",
         icon: "🐐",
         color: "#66399E",
