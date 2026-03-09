@@ -18,7 +18,7 @@ window.AVIA_USER_BADGES = [
         ]
     },
 
-      {
+    {
         name: "KamiNeko!",
         icon: "🦄",
         color: "#916acf",
@@ -27,7 +27,7 @@ window.AVIA_USER_BADGES = [
         ]
     },
     
-      {
+    {
         name: "The GXT",
         icon: "💎",
         color: "#A40202",
@@ -36,7 +36,7 @@ window.AVIA_USER_BADGES = [
         ]
     },
 
-      {
+    {
         name: "Goat",
         icon: "🐐",
         color: "#66399E",
@@ -45,13 +45,22 @@ window.AVIA_USER_BADGES = [
         ]
     },
     
-      {
+    {
         name: "bunny",
         icon: "🐇",
         color: "#FCE4EC",
         users: [
             "amybunnygirl#0122"
         ]
+    },
+
+    {
+        name: "Suspicious",
+        icon: "🕵️",
+        color: "#5b0000",
+        users: [
+            "marcy#3212"
+        ]
     }
 
-];;
+];
