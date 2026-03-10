@@ -52,15 +52,6 @@ window.AVIA_USER_BADGES = [
         users: [
             "amybunnygirl#0122"
         ]
-    },
-
-    {
-        name: "Suspicious",
-        icon: "🕵️",
-        color: "#5b0000",
-        users: [
-            "marcy#3212"
-        ]
     }
 
 ];
