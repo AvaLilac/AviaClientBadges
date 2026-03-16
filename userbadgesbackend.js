@@ -56,8 +56,8 @@ window.AVIA_USER_BADGES = [
         ]
     },
     {
-        "name": "Moderation Team",
-        "icon": "🐇",
+        "name": "Platform Moderator",
+        "icon": "🛡️",
         "color": "#FCE4EC",
         "users": [
             "ispik#2321"
