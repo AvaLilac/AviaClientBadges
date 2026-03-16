@@ -54,5 +54,13 @@ window.AVIA_USER_BADGES = [
         "users": [
             "Asraye#2120"
         ]
-    }
+    },
+    {
+        "name": "Moderation Team",
+        "icon": "🐇",
+        "color": "#FCE4EC",
+        "users": [
+            "ispik#2321"
+        ]
+    },
 ];
