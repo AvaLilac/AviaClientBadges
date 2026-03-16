@@ -62,5 +62,5 @@ window.AVIA_USER_BADGES = [
         "users": [
             "ispik#2321"
         ]
-    },
+    }
 ];
