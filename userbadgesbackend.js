@@ -62,5 +62,13 @@ window.AVIA_USER_BADGES = [
         "users": [
             "ispik#2321"
         ]
+    },
+    {
+        "name": "Avia Client Mobile dev",
+        "icon": "📱",
+        "color": "#B00B1E",
+        "users": [
+            "0simp#2291"
+        ]
     }
 ];
