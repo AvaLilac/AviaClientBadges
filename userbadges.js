@@ -1,111 +1,143 @@
-(function(){
+(function () {
+    if (window.__AVIA_PROFILE_BADGES__) return;
+    window.__AVIA_PROFILE_BADGES__ = true;
 
-if(window.__AVIA_PROFILE_BADGES__)return;
-window.__AVIA_PROFILE_BADGES__=true;
+    const BADGE_URL = "https://raw.githubusercontent.com/AvaLilac/AviaClientBadges/refs/heads/main/userbadgesbackend.js";
 
-const BADGE_URL="https://raw.githubusercontent.com/AvaLilac/AviaClientBadges/refs/heads/main/userbadgesbackend.js";
+    let badgeData = null, loadingPromise = null;
 
-let badgeData=null,loadingPromise=null;
+    function loadBadges() {
+        if (badgeData) return Promise.resolve();
+        if (loadingPromise) return loadingPromise;
 
-function loadBadges(){
-if(badgeData)return Promise.resolve();
-if(loadingPromise)return loadingPromise;
-loadingPromise=fetch(BADGE_URL+"?t="+Date.now())
-.then(r=>r.text())
-.then(code=>{
-new Function(code)();
-badgeData=window.AVIA_USER_BADGES||[];
-})
-.catch(()=>{
-badgeData=[];
-});
-return loadingPromise;
-}
+        loadingPromise = fetch(BADGE_URL + "?t=" + Date.now())
+            .then(r => r.text())
+            .then(code => {
+                new Function(code)();
+                badgeData = window.AVIA_USER_BADGES || [];
+            })
+            .catch(() => {
+                badgeData = [];
+            });
 
-function getUsername(root){
-const tag=root.querySelector("span.fw_200");
-if(!tag)return null;
-const span=tag.parentElement;
-return span?span.textContent.trim():null;
-}
+        return loadingPromise;
+    }
 
-function getUserBadges(username){
-if(!badgeData)return[];
-const clean=username.trim().toLowerCase();
-return badgeData.filter(b=>
-b.users.some(u=>u.toLowerCase()===clean)
-);
-}
+    function getUsername(root) {
+        const tag = root.querySelector("span.fw_200");
+        if (!tag) return null;
 
-function injectBadge(card,username){
-if(card.dataset.aviaBadgeInjected)return;
-card.dataset.aviaBadgeInjected="true";
+        const span = tag.parentElement;
+        return span ? span.textContent.trim() : null;
+    }
 
-card.classList.remove("asp_1/1");
-card.style.aspectRatio="auto";
-card.style.height="auto";
-card.style.minHeight="unset";
-card.style.overflow="visible";
+    function getUserBadges(username) {
+        if (!badgeData) return [];
 
-const container=document.createElement("div");
-container.style.marginTop="8px";
-container.style.display="flex";
-container.style.flexDirection="column";
-container.style.gap="4px";
+        const clean = username.trim().toLowerCase();
+        return badgeData.filter(b =>
+            b.users.some(u => u.toLowerCase() === clean)
+        );
+    }
 
-const label=document.createElement("span");
-label.className="lh_1.25rem fs_0.875rem fw_550";
-label.textContent="BADGE";
-container.appendChild(label);
+    function applyColor(el, color) {
+        if (!color) return;
 
-const badges=getUserBadges(username);
+        const isGradient = /gradient\s*\(/.test(color);
 
-if(badges.length){
-badges.forEach(b=>{
-const line=document.createElement("span");
-line.className="lh_1rem fs_0.75rem fw_500";
-line.textContent=`${b.icon} ${b.name}`;
-line.style.color=b.color;
-container.appendChild(line);
-});
-}else{
-const none=document.createElement("span");
-none.className="lh_1rem fs_0.75rem fw_500";
-none.textContent="User Has No Badges";
-none.style.opacity="0.7";
-container.appendChild(none);
-}
+        if (isGradient) {
+            el.style.background = color;
+            el.style.webkitBackgroundClip = "text";
+            el.style.backgroundClip = "text";
+            el.style.webkitTextFillColor = "transparent";
+            el.style.color = "transparent";
+        } else {
+            el.style.color = color;
+        }
+    }
 
-card.appendChild(container);
-}
+    function injectBadge(card, username) {
+        if (card.dataset.aviaBadgeInjected) return;
+        card.dataset.aviaBadgeInjected = "true";
 
-async function processProfile(root){
-await loadBadges();
-const username=getUsername(root);
-if(!username)return;
-const joined=[...root.querySelectorAll("div.pos_relative")]
-.find(c=>c.querySelector("span")&&c.querySelector("span").textContent.trim()==="Joined");
-if(!joined)return;
-injectBadge(joined,username);
-}
+        card.classList.remove("asp_1/1");
+        card.style.aspectRatio = "auto";
+        card.style.height = "auto";
+        card.style.minHeight = "unset";
+        card.style.overflow = "visible";
 
-const observer=new MutationObserver(muts=>{
-for(const m of muts){
-for(const n of m.addedNodes){
-if(!(n instanceof HTMLElement))continue;
+        const container = document.createElement("div");
+        container.style.marginTop = "8px";
+        container.style.display = "flex";
+        container.style.flexDirection = "column";
+        container.style.gap = "4px";
 
-if(n.matches?.("div.will-change_transform"))processProfile(n);
-if(n.matches?.("div.p_24px.min-w_280px.max-w_560px"))processProfile(n);
+        const label = document.createElement("span");
+        label.className = "lh_1.25rem fs_0.875rem fw_550";
+        label.textContent = "BADGE";
+        container.appendChild(label);
 
-const small=n.querySelector?.("div.will-change_transform");
-if(small)processProfile(small);
+        const badges = getUserBadges(username);
 
-const expanded=n.querySelector?.("div.p_24px.min-w_280px.max-w_560px");
-if(expanded)processProfile(expanded);
-}
-}
-});
+        if (badges.length) {
+            badges.forEach(b => {
+                const line = document.createElement("span");
+                line.className = "lh_1rem fs_0.75rem fw_500";
+                line.style.display = "inline-flex";
+                line.style.alignItems = "center";
+                line.style.gap = "4px";
 
-observer.observe(document.body,{childList:true,subtree:true});
+                const icon = document.createElement("span");
+                icon.textContent = b.icon;
 
+                const name = document.createElement("span");
+                name.textContent = b.name;
+                applyColor(name, b.color);
+
+                line.appendChild(icon);
+                line.appendChild(name);
+                container.appendChild(line);
+            });
+        } else {
+            const none = document.createElement("span");
+            none.className = "lh_1rem fs_0.75rem fw_500";
+            none.textContent = "User Has No Badges";
+            none.style.opacity = "0.7";
+            container.appendChild(none);
+        }
+
+        card.appendChild(container);
+    }
+
+    async function processProfile(root) {
+        await loadBadges();
+
+        const username = getUsername(root);
+        if (!username) return;
+
+        const joined = [...root.querySelectorAll("div.pos_relative")]
+            .find(c => c.querySelector("span") && c.querySelector("span").textContent.trim() === "Joined");
+
+        if (!joined) return;
+        injectBadge(joined, username);
+    }
+
+    const observer = new MutationObserver(muts => {
+        for (const m of muts) {
+            for (const n of m.addedNodes) {
+                if (!(n instanceof HTMLElement)) continue;
+
+                if (n.matches?.("div.will-change_transform")) processProfile(n);
+                if (n.matches?.("div.p_24px.min-w_280px.max-w_560px")) processProfile(n);
+
+                const small = n.querySelector?.("div.will-change_transform");
+                if (small) processProfile(small);
+
+                const expanded = n.querySelector?.("div.p_24px.min-w_280px.max-w_560px");
+                if (expanded) processProfile(expanded);
+            }
+        }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
 })();
