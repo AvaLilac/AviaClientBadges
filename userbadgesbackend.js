@@ -2,7 +2,7 @@ window.AVIA_USER_BADGES = [
     {
         "name": "Avia Client Owner",
         "icon": "👑",
-        "color": "var(--md-sys-color-primary)",
+        "color": "linear-gradient(90deg, #8000ff 0%, #270160 100%)",
         "users": [
             "AvaLilac#7432"
         ]
