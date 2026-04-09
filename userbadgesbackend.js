@@ -66,7 +66,7 @@ window.AVIA_USER_BADGES = [
     {
         "name": "Avia Client Mobile dev",
         "icon": "📱",
-        "color": "#B00B1E",
+        "color": "linear-gradient(90deg, rgb(228, 153, 134) 25%, rgb(209, 37, 59) 50%, rgb(3, 4, 0) 75%)",
         "users": [
             "0simp#2291"
         ]
