@@ -151,21 +151,26 @@
         const username = getUsername(root);
         if (!username) return;
 
-        if (findCardByTitle(root, "Joined") || findCardByTitle(root, "Badges")) {
+        if (findCardByTitle(root, "Badges")) {
             injectBadges(root, username);
             return;
         }
 
-        const inner = new MutationObserver(() => {
-            const hasJoined = findCardByTitle(root, "Joined");
-            const hasBadges = findCardByTitle(root, "Badges");
-            if (!hasJoined && !hasBadges) return;
-            inner.disconnect();
-            setTimeout(() => injectBadges(root, username), 0);
+        const obs = new MutationObserver(() => {
+            if (!findCardByTitle(root, "Joined")) return;
+            if (!findCardByTitle(root, "Bio")) return;
+            obs.disconnect();
+            injectBadges(root, username);
         });
 
-        inner.observe(root, { childList: true, subtree: true });
-        setTimeout(() => inner.disconnect(), 10000);
+        obs.observe(root, { childList: true, subtree: true });
+
+        if (findCardByTitle(root, "Joined") && findCardByTitle(root, "Bio")) {
+            obs.disconnect();
+            injectBadges(root, username);
+        }
+
+        setTimeout(() => obs.disconnect(), 10000);
     }
 
     const observer = new MutationObserver(muts => {
