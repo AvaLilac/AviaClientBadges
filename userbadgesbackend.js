@@ -51,20 +51,6 @@ window.AVIA_USER_BADGES = [
         ]
     },
     {
-        "name": "Early Adopter",
-        "icon": "🐣",
-        "color": "#ffffff",
-        "users": [
-            "AvaLilac#7432",
-            "Amelia#2716",
-            "Nath#9230",
-            "Kaze#6558 ",
-            "MrGXT_yt#0106",
-            "0simp#2291",
-            "raptor#0151"
-        ]
-    },
-    {
         "name": "Plugin Developer",
         "icon": "🧩",
         "color": "#ffffff",
@@ -96,11 +82,26 @@ window.AVIA_USER_BADGES = [
         ]
     },
     {
+        "name": "Early Adopter",
+        "icon": "🐣",
+        "color": "#ffffff",
+        "users": [
+            "AvaLilac#7432",
+            "Amelia#2716",
+            "Nath#9230",
+            "Kaze#6558 ",
+            "MrGXT_yt#0106",
+            "0simp#2291",
+            "raptor#0151"
+        ]
+    },
+    {
         "name": "Avia Client Contributor",
         "icon": "📄",
         "color": "#ffffff",
         "users": [
-            "raptor#0151"
+            "raptor#0151",
+            "Nath#9230"
         ]
     },
     {
