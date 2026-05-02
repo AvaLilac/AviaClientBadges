@@ -94,6 +94,14 @@ window.AVIA_USER_BADGES = [
         ]
     },
     {
+        "name": "Avia Client Contributor",
+        "icon": "📄",
+        "color": "#ffffff",
+        "users": [
+            "raptor#0151"
+        ]
+    },
+    {
         "name": "AviaClient Mobile Creator",
         "icon": "📱",
         "color": "linear-gradient(90deg, rgb(228, 153, 134) 25%, rgb(209, 37, 59) 50%, rgb(3, 4, 0) 75%)",
@@ -131,6 +139,14 @@ window.AVIA_USER_BADGES = [
         "color": "#A40202",
         "users": [
             "MrGXT_yt#0106"
+        ]
+    },
+    {
+        "name": "Nightshade",
+        "icon": "🌙",
+        "color": "linear-gradient(180deg, #652398 0%, #241f31 100%)",
+        "users": [
+            "raptor#0151"
         ]
     },
     {
