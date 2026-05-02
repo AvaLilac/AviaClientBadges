@@ -27,6 +27,30 @@ window.AVIA_USER_BADGES = [
         ]
     },
     {
+        "name": "Avia Staff (Not Assigned)",
+        "icon": "👨‍💻",
+        "color": "#ffffff",
+        "users": [
+            "NoOne#0000"
+        ]
+    },
+    {
+        "name": "Avia Staff (Not Assigned)",
+        "icon": "🧑‍💻",
+        "color": "#ffffff",
+        "users": [
+            "NoOne#0000"
+        ]
+    },
+    {
+        "name": "Avia Staff (Not Assigned)",
+        "icon": "👩🏻‍💻",
+        "color": "#ffffff",
+        "users": [
+            "NoOne#0000"
+        ]
+    },
+    {
         "name": "Plugin Developer",
         "icon": "🧩",
         "color": "#ffffff",
@@ -123,30 +147,6 @@ window.AVIA_USER_BADGES = [
         "color": "var(--md-sys-color-primary)",
         "users": [
             "Asraye#2120"
-        ]
-    },
-    {
-        "name": "Experiment 1",
-        "icon": "👩🏻‍💻",
-        "color": "#ffffff",
-        "users": [
-            "Amelia#2716"
-        ]
-    },
-    {
-        "name": "Experiment 2",
-        "icon": "🧑‍💻",
-        "color": "#ffffff",
-        "users": [
-            "Amelia#2716"
-        ]
-    },
-    {
-        "name": "Experiment 3",
-        "icon": "👨‍💻",
-        "color": "#ffffff",
-        "users": [
-            "Amelia#2716"
         ]
     }
 ];
