@@ -44,66 +44,50 @@
             });
     }
 
-    let tooltip = null;
-    let tooltipText = null;
-
-    function getTooltip() {
-        if (!tooltip) {
-            tooltip = document.createElement("div");
-            tooltip.style.cssText = "position:fixed;z-index:9999;pointer-events:none;display:none;";
-            const inner = document.createElement("div");
-            inner.className = "bg_black p_var(--gap-md) bdr_var(--borderRadius-md) lh_0.875rem fs_0.6875rem ls_0.03125rem fw_500";
-            tooltipText = document.createElement("span");
-            inner.appendChild(tooltipText);
-            tooltip.appendChild(inner);
-            document.body.appendChild(tooltip);
-        }
-        return tooltip;
-    }
-
-    function showTooltip(e, badge) {
-        getTooltip();
-        tooltipText.textContent = badge.name;
-        const color = badge.color || "";
-        if (color.includes("gradient")) {
-            tooltipText.style.background = color;
-            tooltipText.style.webkitBackgroundClip = "text";
-            tooltipText.style.webkitTextFillColor = "transparent";
-            tooltipText.style.color = "transparent";
-        } else {
-            tooltipText.style.background = "";
-            tooltipText.style.webkitBackgroundClip = "";
-            tooltipText.style.webkitTextFillColor = "";
-            tooltipText.style.color = color || "white";
-        }
-        tooltip.style.display = "block";
-        positionTooltip(e);
-    }
-
-    function positionTooltip(e) {
-        getTooltip();
-        const rect = tooltip.getBoundingClientRect();
-        let x = e.clientX - rect.width / 2;
-        let y = e.clientY - rect.height - 8;
-        x = Math.max(4, Math.min(x, window.innerWidth - rect.width - 4));
-        y = Math.max(4, y);
-        tooltip.style.left = x + "px";
-        tooltip.style.top = y + "px";
-    }
-
-    function hideTooltip() {
-        getTooltip();
-        tooltip.style.display = "none";
-    }
-
     function makeBadgeSpan(b) {
         const wrapper = document.createElement("span");
         wrapper.setAttribute("aria-label", b.name);
         wrapper.style.cssText = "display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;font-size:20px;line-height:1;cursor:default;position:relative;";
         wrapper.textContent = b.icon;
-        wrapper.addEventListener("mouseenter", e => showTooltip(e, b));
-        wrapper.addEventListener("mousemove",  e => positionTooltip(e));
-        wrapper.addEventListener("mouseleave", hideTooltip);
+
+        let tip = null;
+
+        wrapper.addEventListener("mouseenter", () => {
+            tip = document.createElement("div");
+            tip.style.cssText = "position:fixed;z-index:99999;pointer-events:none;white-space:nowrap;";
+
+            const inner = document.createElement("div");
+            inner.className = "c_white bg_black p_var(--gap-md) bdr_var(--borderRadius-md) lh_0.875rem fs_0.6875rem ls_0.03125rem fw_500";
+            inner.style.cssText = "";
+
+            const color = b.color || "";
+            if (color.includes("gradient")) {
+                const textSpan = document.createElement("span");
+                textSpan.textContent = b.name;
+                textSpan.style.cssText = `background:${color};-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;`;
+                inner.appendChild(textSpan);
+            } else {
+                inner.textContent = b.name;
+                inner.style.color = color || "white";
+            }
+
+            tip.appendChild(inner);
+            document.body.appendChild(tip);
+
+            requestAnimationFrame(() => {
+                const badgeRect = wrapper.getBoundingClientRect();
+                const tipRect = tip.getBoundingClientRect();
+                const x = badgeRect.left + badgeRect.width / 2 - tipRect.width / 2;
+                const y = badgeRect.top - tipRect.height - 5;
+                tip.style.left = Math.max(4, x) + "px";
+                tip.style.top = Math.max(4, y) + "px";
+            });
+        });
+
+        wrapper.addEventListener("mouseleave", () => {
+            if (tip) { tip.remove(); tip = null; }
+        });
+
         return wrapper;
     }
 
