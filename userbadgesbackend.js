@@ -77,7 +77,8 @@ window.AVIA_USER_BADGES = [
         "users": [
             "AvaLilac#7432",
             "Amelia#2716",
-            "0simp#2291"
+            "0simp#2291",
+            "raptor#0151"
         ]
     },
     {
@@ -90,7 +91,8 @@ window.AVIA_USER_BADGES = [
             "Nath#9230",
             "Kaze#6558 ",
             "MrGXT_yt#0106",
-            "0simp#2291"
+            "0simp#2291",
+            "raptor#0151"
         ]
     },
     {
