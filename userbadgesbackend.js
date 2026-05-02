@@ -18,11 +18,12 @@ window.AVIA_USER_BADGES = [
     },
     {
         "name": "Avia Staff",
-        "icon": "🛡️",
+        "icon": "🚨",
         "color": "#ffffff",
         "users": [
             "AvaLilac#7432",
-            "Amelia#2716"
+            "Amelia#2716",
+            "amyshim.vrc#5716"
         ]
     },
     {
