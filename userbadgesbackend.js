@@ -47,7 +47,8 @@ window.AVIA_USER_BADGES = [
         "icon": "👩🏻‍💻",
         "color": "#ffffff",
         "users": [
-            "NoOne#0000"
+            "NoOne#0000",
+            "AvaLilac#7432"
         ]
     },
     {
