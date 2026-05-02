@@ -32,7 +32,8 @@ window.AVIA_USER_BADGES = [
         "color": "#ffffff",
         "users": [
             "0simp#2291",
-            "Amelia#2716"
+            "Amelia#2716",
+            "AvaLilac#7432"
         ]
     },
     {
@@ -122,6 +123,30 @@ window.AVIA_USER_BADGES = [
         "color": "var(--md-sys-color-primary)",
         "users": [
             "Asraye#2120"
+        ]
+    },
+    {
+        "name": "Experiment 1",
+        "icon": "👩🏻‍💻",
+        "color": "#ffffff",
+        "users": [
+            "Amelia#2716"
+        ]
+    },
+    {
+        "name": "Experiment 2",
+        "icon": "🧑‍💻",
+        "color": "#ffffff",
+        "users": [
+            "Amelia#2716"
+        ]
+    },
+    {
+        "name": "Experiment 3",
+        "icon": "👨‍💻",
+        "color": "#ffffff",
+        "users": [
+            "Amelia#2716"
         ]
     }
 ];
