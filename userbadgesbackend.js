@@ -148,5 +148,23 @@ window.AVIA_USER_BADGES = [
         "users": [
             "Asraye#2120"
         ]
+    },
+    {
+        "name": "Alarming Nipple",
+        "icon": "🚨",
+        "color": "#ffffff",
+        "users": [
+            "insert#6271",
+            "ispik#2321"
+        ]
+    },
+    {
+        "name": " The Braless Sonet",
+        "icon": "⏰",
+        "color": "#ffffff",
+        "users": [
+            "insert#6271",
+            "ispik#2321"
+        ]
     }
 ];
