@@ -110,6 +110,14 @@ window.AVIA_USER_BADGES = [
         ]
     },
     {
+        "name": "Luna",
+        "icon": "🌙",
+        "color": "linear-gradient(90deg, #ffb7c5 0%, #ff6f91 100%)",
+        "users": [
+            "AvaLilac#7432"
+        ]
+    },
+    {
         "name": "KamiNeko!",
         "icon": "🦄",
         "color": "#916acf",
