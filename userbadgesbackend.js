@@ -27,6 +27,14 @@ window.AVIA_USER_BADGES = [
         ]
     },
     {
+        "name": "Avia Volunteer Support",
+        "icon": "🤝",
+        "color": "#ffffff",
+        "users": [
+            "raptor#0151"
+        ]
+    },
+    {
         "name": "Avia Staff (Not Assigned)",
         "icon": "👨‍💻",
         "color": "#ffffff",
